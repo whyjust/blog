@@ -1,0 +1,2 @@
+<h1>你好 {{ username }}</h1>
+<h3>请点击右侧的激活的链接 进行用户注册的激活<a href="{{ url_for('user.activate',token=token,_external=True) }}">激活</a></h3>
