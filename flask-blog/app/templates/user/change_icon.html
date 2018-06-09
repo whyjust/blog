@@ -1,0 +1,10 @@
+{% extends 'common/base.html' %}
+{% block title %}
+    修改信息
+{% endblock %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% block page_content %}
+
+    <img src="{{ img_url }}" alt="">
+    {{ wtf.quick_form(form) }}
+{% endblock %}

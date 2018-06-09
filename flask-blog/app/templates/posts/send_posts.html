@@ -1,0 +1,25 @@
+{% extends 'common/base.html' %}
+{% block title %}
+     电影列表
+{% endblock %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% block scripts %}
+    {{ super() }}
+    <script src="//cdn.ckeditor.com/4.4.6/standard/ckeditor.js"></script>
+{% endblock %}
+{% block page_content %}
+    <div class="page-header"><h1>电影信息发布</h1></div>
+    <form action="{{ url_for('posts.send_posts') }}" method="post">
+        {{ form.csrf_token }}
+        {{ form.content(class="ckeditor") }}
+
+
+
+        <button type="submit" class="btn btn-success">发表</button>
+        {% if  form.content.errors %}
+            <div style="float: right;color: red;font-size: 20px">{{ form.content.errors.0 }}</div>
+        {% endif %}
+    </form>
+
+
+{% endblock %}
